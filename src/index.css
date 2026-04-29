@@ -1,0 +1,26 @@
+@import "tailwindcss";
+@import "daisyui/daisyui.css";
+
+@layer components {
+    .glass {
+        @apply p-4 rounded-2xl hover:scale-95 transition-all duration-300 cursor-pointer mx-auto shadow-2xl backdrop-blur-xl border-2 bg-white/70
+    }
+
+    
+    .container {
+        @apply flex flex-col p-4 justify-center items-center min-h-screen bg-white/60
+    }
+
+
+    .beautiful-text {
+        @apply font-bold text-xl text-center bg-gradient-to-b from-red-400 via-yellow-500 via-orange-400 to-red-500 text-transparent bg-clip-text
+    }
+}
+
+@layer base {
+    body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+}
