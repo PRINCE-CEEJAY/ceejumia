@@ -1,5 +1,7 @@
 import { useGetProductsQuery } from "../productApi"
 import { useState } from "react"
+import ProductItem from "./ProductItem"
+
 const ProductList = () => {
   const { data, isLoading, error } = useGetProductsQuery('')
   const [selectedItem, setSelectedItem] = useState('all')
@@ -12,8 +14,6 @@ const ProductList = () => {
     return item.category === selectedItem.toLowerCase()
   }
 )
-
-
  
   return (
     <div className="container min-w-screen p-4">
@@ -32,23 +32,13 @@ const ProductList = () => {
             }
         </select>  
       </div>
-      <div className="grid grid-cols-3 gap-3">      
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">      
         { isLoading ? <h1>Loading ...</h1>:
-          selectectedData.map((product)=>(
-            <div key={product.id} className="glass cursor-pointer text-center">
-              <h1 className="text-center text-xl uppercase font-bold underline text-green-600">{product.title}</h1>
-              <img src={product.images[0]} width={200} height={200} alt="product-image" className="mx-auto"/>
-              <h3 className="text-center">Price: ${product.price}</h3>
-              <h4>Category: {product.category}</h4>
-              <p className="italic">Description: {product.description}</p>
-              <button className="px-6 py-1 bg-orange-400 rounded-lg hover:bg-transparent hover:border hover:border-2 cursor-pointer ">Order Now</button>
-            </div>
+          selectectedData?.map((product)=>(
+           <ProductItem key={product.id} product={product}/>
           ))
         }
-
-        {
-          error && <h1>Error occured while fetching data </h1>
-        }
+        {error && <h1 className="text-center animate-pulse">Error occured while fetching data </h1>  }
       </div>
     </div>
   )
