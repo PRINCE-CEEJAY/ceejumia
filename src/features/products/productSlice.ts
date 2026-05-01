@@ -9,9 +9,9 @@ export const productSlice = createSlice({
     name: 'products',
     initialState,
     reducers: {
-        addProduct: (state: StateType, action: PayloadAction<Omit<ProductType, "id">>) => {
+        addProduct: (state: StateType, action: PayloadAction<ProductType>) => {
             state.products.push({
-                id: Date.now(),
+                id:action.payload.id ?? Date.now(),
                 ...action.payload                
             })
         },
