@@ -3,8 +3,9 @@ import Footer from "./main/Footer"
 import Navbar from "./main/Navbar"
 const App = () => {
   return (
-    <div className="flex flex-col min-h-screen">   
+    <div className="fixed inset-0 min-h-screen">   
     <Navbar/>
+ 
       {/* rendering features */}
       <ProductList/>
 

@@ -16,7 +16,7 @@ const ProductList = () => {
 )
  
   return (
-    <div className="container min-w-screen p-4">
+    <div className="min-w-screen p-4 mt-12">
       <h1 className="beautiful-text">PRODUCTS LIST</h1> 
       <div 
       className="flex items-center w-sm space-x-2 max-w-lg p-2 bg-zinc-500 font-semibold text-white rounded-md mb-8"
