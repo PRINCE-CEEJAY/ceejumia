@@ -1,17 +1,17 @@
-import ProductList from "./features/products/components/ProductList"
-import Footer from "./main/Footer"
-import Navbar from "./main/Navbar"
+import ProductList from './features/products/components/ProductList';
+import Footer from './main/Footer';
+import Navbar from './main/Navbar';
 const App = () => {
   return (
-    <div className="flex flex-col min-h-screen">   
-    <Navbar/>
- 
+    <div className='flex flex-col min-h-screen'>
+      <Navbar />
+
       {/* rendering features */}
-      <ProductList/>
+      <ProductList />
 
-    <Footer/>
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
